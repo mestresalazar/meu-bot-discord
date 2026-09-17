@@ -772,3 +772,11 @@ client.on('interactionCreate', async (interaction) => {
 
 // LOGIN COM TOKEN DO BOT
 client.login(process.env.DISCORD_TOKEN);
+// --- SERVIDOR WEB FANTASMA PARA O RENDER ---
+const http = require('http');
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot BMRP online!\n');
+}).listen(process.env.PORT || 3000, () => {
+    console.log('Servidor web fantasma rodando.');
+});
